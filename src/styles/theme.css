@@ -1,8 +1,8 @@
 root {
 --primary: #7180acff;
---primary-light: #2b4570ff;
---primary-dark: #e6e8e6ff;
---primary-contrast: #590925ff;
+--primary-dark: #2b4570ff;
+--primary-light: #e6e8e6ff;
+--primary-contrast-dark: #590925ff;
 
 --gray-50: #f9fafb;
 --gray-100: #f3f4f6;

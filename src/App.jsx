@@ -1,16 +1,31 @@
 import "./styles/theme.css";
 import "./styles/global.css";
 
+import { MyText } from "./components/MyText";
+
 export default function App() {
+
+  const texts = [
+    {
+      title: "Meu Título",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      title: "Meu Título",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      title: "Meu Título",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    }
+  ];
   return (
-    <div>
-      <h1>Meu primeiro React App</h1>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. 
-      </p>
-    </div>
+    <>
+        {texts.map((text, index) => (
+          <MyText key={index} title={`${index + 1}. ${text.title}`}>
+            {text.text}
+          </MyText>
+        ))}
+    </>
   );
 }
