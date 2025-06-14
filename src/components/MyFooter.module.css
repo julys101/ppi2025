@@ -1,0 +1,53 @@
+.footer {
+  background-color: rgb(255, 255, 255);
+  color: #450755;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 1.4rem;
+  gap: 1.5rem;
+}
+
+.left, .center, .right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.center {
+  flex: 1;
+  align-items: center;
+  text-align: center;
+}
+
+.right {
+  flex-direction: row;
+  gap: 1rem;
+}
+
+a {
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .left, .center, .right {
+    align-items: center;
+  }
+
+  .right {
+    justify-content: center;
+  }
+  .name {
+  font-size: 2rem;
+  color: #320053;
+  text-align: center;
+}
+
+}

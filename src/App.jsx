@@ -1,31 +1,17 @@
-import "./styles/theme.css";
-import "./styles/global.css";
 
-import { MyText } from "./components/MyText";
+import "./styles/global.css";
+import "./styles/theme.css";
+
+import MyHeader from "./components/MyHeader";
+import MyMain from "./components/MyMain";
+import MyFooter from "./components/MyFooter";
 
 export default function App() {
-
-  const texts = [
-    {
-      title: "Meu Título",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      title: "Meu Título",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      title: "Meu Título",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    }
-  ];
   return (
-    <>
-        {texts.map((text, index) => (
-          <MyText key={index} title={`${index + 1}. ${text.title}`}>
-            {text.text}
-          </MyText>
-        ))}
-    </>
+    <div className="app">
+      <MyHeader />
+      <MyMain />
+      <MyFooter />
+    </div>
   );
 }
