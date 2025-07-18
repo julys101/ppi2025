@@ -1,13 +1,22 @@
+import { ShoppingBasket } from "lucide-react";
 import styles from "./MyHeader.module.css";
+import { Link } from "react-router";
 
-export function MyHeader() {
+export function MyHeader({ cart }) {
   return (
-    <header className={styles.container}>
-      <div className={styles.fraseContainer}>
-        <h1 className={styles.frase}>
-          <span className={styles.emoji}>🎲</span> Lucky Number Generator
-        </h1>
-      </div>
-    </header>
+    <div className={styles.container}>
+      <Link to="/" className={styles.link}><h1>TJA Megastore</h1></Link>
+      <Link to="/cart" className={styles.link}>
+        <div className={styles.cartInfo}>
+          <ShoppingBasket size={32} />
+          <p>
+            Total: ${" "}
+            {cart
+              .reduce((total, product) => total + product.price, 0)
+              .toFixed(2)}
+          </p>
+        </div>
+      </Link>
+    </div>
   );
 }
