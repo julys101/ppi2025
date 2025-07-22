@@ -19,7 +19,7 @@
 .cartInfo {
   border-radius: 3rem;
   background-color: var(--primary-light);
-  color: var(--primary-contrast-dark);
+  color: var(--primary-dark);
   padding: 2rem;
   font-size: 3rem;
   font-weight: bold;
@@ -28,5 +28,5 @@
 
 .link {
   text-decoration: none;
-  color: var(--primary);
+  color: var(--primary-light);
 }
