@@ -8,6 +8,5 @@ export function MyText({ title, children }) {
         {/* <p className={styles.text}>{children}</p> */}
       </div>
     </div>
-
   );
 }

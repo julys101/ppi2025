@@ -1,22 +1,26 @@
+import { useState } from "react"; 
 import "./styles/theme.css";
 import "./styles/global.css";
-import { ProductList } from "./components/ProductList";
-import { Header } from "./components/Header";
-import { Route, Routes } from "react-router";
-import { Cart } from "./components/Cart";
-import { CartProvider } from "./service/CartContext";
+import { Gerenciador } from "./components/Gerenciador";
+import { Cadastro } from "./components/Cadastro";
+import { Login } from "./components/Login";
 
 export default function App() {
+  const [usuario, setUsuario] = useState(null);
+  const [mostrarCadastro, setMostrarCadastro] = useState(false);
 
-  return (
-    <>
-      <CartProvider>
-        <Header />
-        <Routes>
-          <Route path="/" element={<ProductList />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-      </CartProvider>
-    </>
-  );
+  if (!usuario) {
+    return mostrarCadastro ? (
+      <Cadastro
+        onRegister={() => setMostrarCadastro(false)} 
+      />
+    ) : (
+      <Login
+        onLogin={(email) => setUsuario(email)}
+        onShowCadastro={() => setMostrarCadastro(true)} 
+      />
+    );
+  }
+
+  return <Gerenciador />;
 }
